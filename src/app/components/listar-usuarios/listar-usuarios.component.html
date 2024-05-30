@@ -1,0 +1,74 @@
+
+<header>
+  <h1>"UN BUEN LIBRO ES UNA VOZ SABIA JUNTO A TI"</h1>
+  <nav>
+    <ul>
+      <li><a routerLink="/dashboard">Inicio</a></li>
+      <li><a routerLink="/libro">Agregar Libro</a></li>
+      <li><a routerLink="/list-libro">Listar libro</a></li>
+      <li><a routerLink="/registrar-usuario">Crear perfil</a></li>
+    </ul>
+    <div class="logout">
+      <button (click)="logOut()">Salir</button>
+    </div>
+  </nav>
+</header>
+
+
+       
+        <h1>Lista de Usuarios</h1>
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let usuario of usuarios$ | async">
+            {{ usuario.nombre }} {{ usuario.apellido }} - {{ usuario.email }}
+            <button class="btn btn-info btn-sm" (click)="editar(usuario)">Editar</button>
+            <button class="btn btn-danger btn-sm" (click)="eliminar(usuario)">Eliminar</button>
+          </li>
+        </ul>
+        
+        <hr>
+        
+        <div *ngIf="usuarioParaEditar">
+          <h1>Editar Usuario</h1>
+          <form [formGroup]="editarUsuarioForm" (ngSubmit)="guardarEdicion()">
+            <input type="hidden" formControlName="id" />
+        
+            <div class="form-group">
+              <label for="editarNombre">Nombre</label>
+              <input type="text" id="editarNombre" formControlName="nombre" class="form-control" />
+              <div *ngIf="editarUsuarioForm.get('nombre')?.invalid && editarUsuarioForm.get('nombre')?.touched" class="small text-danger">
+                El nombre es requerido.
+              </div>
+            </div>
+        
+            <div class="form-group">
+              <label for="editarApellido">Apellido</label>
+              <input type="text" id="editarApellido" formControlName="apellido" class="form-control" />
+              <div *ngIf="editarUsuarioForm.get('apellido')?.invalid && editarUsuarioForm.get('apellido')?.touched" class="small text-danger">
+                El apellido es requerido.
+              </div>
+            </div>
+        
+            <div class="form-group">
+              <label for="editarEmail">Email</label>
+              <input type="email" id="editarEmail" formControlName="email" class="form-control" />
+              <div *ngIf="editarUsuarioForm.get('email')?.invalid && editarUsuarioForm.get('email')?.touched" class="small text-danger">
+                El email es requerido y debe ser válido.
+              </div>
+            </div>
+        
+            <button type="submit" class="btn btn-primary" [disabled]="editarUsuarioForm.invalid">
+              Guardar
+            </button>
+          </form>
+        </div>
+        
+      
+
+<footer>
+  <small>Derechos reservados &copy; 2024-2025</small>
+  <small>Irar Nankamai</small>
+  <small>DomeniKa Delgado</small>
+  <address>
+    <a href="http://www.google.com">Google</a>
+  </address>
+</footer>

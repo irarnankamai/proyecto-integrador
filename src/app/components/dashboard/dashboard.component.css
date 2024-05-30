@@ -1,0 +1,150 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background: #333;
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #444;
+  padding: 10px 0;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+.logout {
+  margin-right: 20px;
+}
+
+.logout button {
+  background: #ff5c5c;
+  border: none;
+  padding: 10px 20px;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.logout button:hover {
+  background: #ff1c1c;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.contenido-izquierdo, .contenido-derecho {
+  flex: 1;
+  padding: 20px;
+  border: 2px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.slider {
+  position: relative;
+  width: 100%;
+  max-width: 100%; /* Ensure the slider fits within its container */
+  overflow: hidden;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.slide {
+  width: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+}
+
+.slider .slide:first-child {
+  display: flex;
+}
+
+
+
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  width: 100%;
+  margin-top: auto;
+}
+
+footer small {
+  display: block;
+}
+
+footer address a {
+  color: #fff;
+  text-decoration: none;
+}
+
+footer address a:hover {
+  text-decoration: underline;
+}
+
+.custom-button {
+  display: inline-block;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: white;
+  background-color: blue; /* Color de fondo azul */
+  border-radius: 5px;
+}
+
+.custom-button:hover {
+  background-color: green; /* Cambio de color al pasar el ratón a verde */
+}

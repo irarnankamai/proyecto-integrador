@@ -1,0 +1,59 @@
+<header>
+    <h1>"UN BUEN LIBRO ES UNA VOZ SABIA JUNTO A TI"</h1>
+    <nav>
+      <ul>
+        <li><a routerLink="/dashboard">Inicio</a></li>
+        <li><a routerLink="/list-libro">Listar libro</a></li>
+        <li><a routerLink="/listar-usuarios">Listar usuarios</a></li>
+        <li><a routerLink="/agregar-usuario">Agregar Usuario</a></li>
+      </ul>
+      <div class="logout">
+        <button (click)="logOut()">Salir</button>
+      </div>
+    </nav>
+  </header>
+
+    <div class="contenido-izquierdo">
+      <h3>{{ titulo }}
+          <div *ngIf="loading" role="status">
+              <span>Loading...</span>
+          </div>
+      </h3>
+      <span *ngIf="submitted && createLibro.invalid">TODOS LOS CAMPOS SON OBLIGATORIOS</span>
+  
+      <form [formGroup]="createLibro" (ngSubmit)="agregarEditarLibro()">
+          <div>
+              <label>Titulo:</label>
+              <input type="text" formControlName="titulo" placeholder="Titutlo">
+          </div>
+          <div class="col">
+              <label>Autor:</label>
+              <input type="text" formControlName="autor" placeholder="Autor">
+          </div>
+          <div>
+              <label>Genero:</label>
+              <input type="text" formControlName="genero" placeholder="Genero">
+          </div>
+          <div>
+              <label>Ejemplar</label>
+              <input type="number" formControlName="ejemplar" placeholder="Ejemplar">
+          </div>
+  
+          <div>
+              <button type="submit">Agregar</button><br>
+              
+          
+            <a class="b" routerLink="/list-libro">Cancelar</a>
+        
+          </div>
+      </form>
+  </div>
+
+  <footer>
+    <small>Derechos reservados &copy; 2024-2025</small>
+    <small>Irar Nankamai</small>
+    <small>DomeniKa Delgado</small>
+    <address>
+      <a href="http://www.google.com">Google</a>
+    </address>
+  </footer>      

@@ -1,0 +1,58 @@
+
+
+<header>
+  <h1>"UN BUEN LIBRO ES UNA VOZ SABIA JUNTO A TI"</h1>
+  <nav>
+    <ul>
+      <li><a routerLink="/libro">Agregar Libro</a></li>
+      <li><a routerLink="/imagen">Agregar img</a></li>
+      <li><a routerLink="/list-libro">Listar libro</a></li>
+      <li><a routerLink="/imagen">Catalogo</a></li>
+      <li><a routerLink="/listar-usuarios">ver registrados</a></li>
+      <li><a routerLink="/registrar-usuario">crear perfil</a></li>
+    </ul>
+    <div class="logout">
+      <p>{{ dataUser?.email }}</p>
+      <button (click)="logOut()">Salir</button>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <div class="contenido-izquierdo">
+
+      <h1>Sobre Nosotros</h1>
+      <p>
+      Tenemos una  vasta colección de recursos digitales, nuestra biblioteca se compromete a proporcionar acceso a información y conocimiento a toda la comunidad. Ofrecemos un entorno acogedor y estimulante, diseñado para inspirar y apoyar a nuestros usuarios en su búsqueda de conocimientos y desarrollo personal. </p>
+      
+      <h1>Misión</h1>
+      <p>
+      
+      Ser un centro de excelencia en la provisión de recursos informativos, culturales y educativos sobre todo en la colección de nuevos libros. </p>
+      
+      <h1>Visión</h1>
+      
+      <p>
+      
+      Nuestra visión es convertirnos en un referente regional y nacional en servicios bibliotecarios, caracterizándonos por la innovación y la calidad. Aspiramos a ser un lugar donde el conocimiento y la cultura se encuentren, promoviendo el desarrollo intelectual y cultural .Nos imaginamos un futuro en el que cada persona tenga acceso fácil y gratuito a los recursos necesarios para su crecimiento personal y profesional.
+      </p>
+    
+  </div>
+  <div class="contenido-derecho">
+
+    <h2>LIBROS DISPONIBLES</h2>
+    <div class="slider">
+      <div class="slide"><img src="../../../assets/img/poder.jpg" alt="Libro 2"></div><br>
+  </div>
+    <a routerLink="/imagen" class="custom-button">Ver catalogo</a><br>
+  </div>
+</main>
+
+<footer>
+  <small>Derechos reservados &copy; 2024-2025</small>
+  <small>Irar Nankamai: irarcris@gmail.com</small>
+  <small>DomeniKa Delgado</small>
+  <address>
+    <a href="http://www.google.com">Google</a>
+  </address>
+</footer>

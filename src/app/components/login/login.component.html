@@ -1,0 +1,38 @@
+<div class="background-container">
+    <div class="contenido">
+      <div *ngIf="!loading" class="login-box">
+        <h1>LOGIN</h1>
+        <form (ngSubmit)="login()" [formGroup]="loginUsuario">
+          <div class="input-container">
+            <input type="email" formControlName="email" placeholder="name@example.com" required>
+            <label>Email</label>
+            <span *ngIf="loginUsuario.get('email')?.hasError('required') && loginUsuario.get('email')?.touched" class="error">
+              El <strong>correo</strong> es requerido
+            </span>
+            <span *ngIf="loginUsuario.get('email')?.hasError('email') && loginUsuario.get('email')?.touched" class="error">
+              El <strong>correo</strong> es invalido
+            </span>
+          </div>
+  
+          <div class="input-container">
+            <input type="password" formControlName="password" placeholder="Password" required>
+            <label>Password</label>
+            <span *ngIf="loginUsuario.get('password')?.hasError('required') && loginUsuario.get('password')?.touched" class="error">
+              La <strong>Contraseña</strong> es requerida
+            </span>
+          </div>
+  
+          <div>
+            <button type="submit" [disabled]="loginUsuario.invalid" class="login-button">Ingresar</button>
+          </div>
+          <a routerLink="/recuperar-password">Recuperar Contraseña</a><br>
+       <p>No tienes cuenta? <a routerLink="/registrar-usuario">Registrar</a></p>
+        
+        </form>
+     
+        <button (click)="loginWithGoogle()" class="login-button google-login">Registrarse con Google</button>
+        
+      </div>
+      <app-procesar *ngIf="loading"></app-procesar>
+    </div>
+  </div>

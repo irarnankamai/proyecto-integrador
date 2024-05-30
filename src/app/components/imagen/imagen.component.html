@@ -1,0 +1,51 @@
+
+<header>
+  <h1>"UN BUEN LIBRO ES UNA VOZ SABIA JUNTO A TI"</h1>
+  <nav>
+    <ul>
+      <li><a routerLink="/dashboard">Inicio</a></li>
+      <li><a routerLink="/list-libro">Listar libro</a></li>
+      <li><a routerLink="/listar-usuarios">Ver usuarios</a></li>
+      <li><a routerLink="/registrar-usuario">Crear perfil</a></li>
+    </ul>
+    <div class="logout">
+      <button (click)="logOut()">Salir</button>
+    </div>
+  </nav>
+</header>
+<main>
+  <div class="contenido-izquierdo">
+   
+    <div>
+      <label >Nombre de libro: </label>
+      <input type="text" [(ngModel)]="imageName" placeholder="Nombre de la imagen"> <br><br>
+      <label for="fileInput" class="custom-file-upload">
+        Seleccionar archivo <br>
+        <input id="fileInput" type="file" (change)="onSelectFile($event)" accept="image/*">
+    </label><br>
+      <button class="s"     (click)="uploadImage()">Guardar</button>
+    </div><br>
+    <h1>CATALOGO</h1><br>
+      <p>Aqui tienes todo los libros disponibles</p><br>
+    <div class="image-container">
+      
+      <div *ngFor="let item of items | async">
+        <div class="image-wrapper">
+          <img [src]="item.url" alt="Imagen" class="image">
+          <div class="image-name">{{ item.name }}</div>
+        </div>
+        <button class="b" (click)="deleteImage(item.id)">Eliminar</button>
+      </div>
+    </div>
+  </div>
+</main>
+
+
+<footer>
+  <small>Derechos reservados &copy; 2024-2025</small><br>
+  <small>Irar Nankamai</small><br>
+  <small>DomeniKa Delgado</small><br>
+  <address>
+    <a href="http://www.google.com">Google</a>
+  </address>
+</footer> 

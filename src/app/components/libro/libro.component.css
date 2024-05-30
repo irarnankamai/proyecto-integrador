@@ -1,0 +1,180 @@
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header */
+header {
+  background: #333;
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+/* Nav */
+nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #444;
+  padding: 10px 0;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 5px 15px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+.logout {
+  margin-top: 10px;
+}
+
+.logout button {
+  background: #ff5c5c;
+  border: none;
+  padding: 10px 20px;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.logout button:hover {
+  background: #ff1c1c;
+}
+
+/* Footer */
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  margin-top: auto;
+}
+
+footer small {
+  display: block;
+}
+
+footer address a {
+  color: #fff;
+  text-decoration: none;
+}
+
+footer address a:hover {
+  text-decoration: underline;
+}
+
+/* Slider */
+.contenido-izquierdo {
+  flex: 1;
+  padding: 20px;
+}
+
+.contenido-izquierdo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.contenido-izquierdo h3 {
+  text-align: center;
+}
+
+.contenido-izquierdo form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 400px; /* Ajusta el ancho según tus necesidades */
+}
+
+.contenido-izquierdo form div {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.contenido-izquierdo form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.contenido-izquierdo form input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.contenido-izquierdo .b {
+  text-align: center;
+  display: block;
+  margin: 10px 0;
+}
+
+.contenido-izquierdo button {
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #1cff1c;
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+  nav {
+      flex-direction: row;
+      justify-content: space-between;
+  }
+
+  .logout {
+      margin-top: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+  }
+
+  .contenido-izquierdo{
+      max-width: 50%;
+  }
+
+  nav ul {
+      justify-content: flex-start;
+  }
+}

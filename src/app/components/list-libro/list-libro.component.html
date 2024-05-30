@@ -1,0 +1,52 @@
+
+<header>
+  <h1>"UN BUEN LIBRO ES UNA VOZ SABIA JUNTO A TI"</h1>
+  <nav>
+    <ul>
+      <li><a routerLink="/dashboard">Inicio</a></li>
+      <li><a routerLink="/list-libro">Listar libro</a></li>
+      <li><a routerLink="/listar-usuarios">Listar usuarios</a></li>
+      <li><a routerLink="/registrar-usuario">Agregar Usuario</a></li>
+    </ul>
+    <div class="logout">
+      <button (click)="logOut()">Salir</button>
+    </div>
+  </nav>
+</header>
+<main>
+  <div class="contenido-izquierdo">
+    <span><h1>LIBROS REGISTRADOS</h1></span>
+        
+    <table>
+        <thead>
+          <tr>
+            <th>Titulo</th>
+            <th>Autor</th>
+            <th>Genero</th>
+            <th>Ejemplar</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let libro of libros">
+            <td>{{ libro.titulo }}</td>
+            <td>{{ libro.autor }}</td>
+            <td>{{ libro.genero }}</td>
+            <td>{{ libro.ejemplar | currency }}</td>
+            <td>
+              <a class="b" routerLink="/editLibro/{{ libro.id }}">Editar</a>
+              <a class="c" href="#" (click)="eliminarLibro(libro.id)">Eliminar</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
+</main>
+<footer>
+  <small>Derechos reservados &copy; 2024-2025</small>
+  <small>Irar Nankamai</small>
+  <small>DomeniKa Delgado</small>
+  <address>
+    <a href="http://www.google.com">Google</a>
+  </address>
+</footer>      
